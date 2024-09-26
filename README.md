@@ -16,9 +16,9 @@ TO DO when registered on pip.
 python -m unittest
 ```
 ```
-.........
+..............
 ----------------------------------------------------------------------
-Ran 9 tests in 0.452s
+Ran 14 tests in 11.538s
 
 OK
 ```
