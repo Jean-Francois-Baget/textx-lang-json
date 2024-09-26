@@ -26,7 +26,7 @@ OK
 
 ## Usage
 
-### Obtaining the parser
+### Building the parser
 
 The first thing 
 
@@ -35,5 +35,14 @@ from textx import metamodel_for_language
 
 parser = metamodel_for_language('textxjson')
 ```
+
+```python
+from textx.export import metamodel_export
+
+metamodel_export(parser, 'json.dot')
+```
+Ihis codes generates a file `json.dot` that can be visualized with [Graphviz](https://graphviz.org/), as shown below.
+
+![parser](./img/json.png)
 
 

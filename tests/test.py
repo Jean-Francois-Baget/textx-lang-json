@@ -7,7 +7,6 @@ import unittest
 from textx import metamodel_for_language
 import json
 import unicodedata
-import re
 
 def exists(character):
     ''' Tests if a character exists in the unicode table.
