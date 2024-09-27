@@ -1,0 +1,44 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+1664679089488 -> 1664679089392 [label="value" arrowtail=diamond dir=both]
+1664679089392 -> 1664679089248 [label="value:0" arrowtail=diamond dir=both]
+1664679089248 -> 1664679089104 [label="name" arrowtail=diamond dir=both]
+1664679089104[label="{:JsonString|+value:str='\"name\"'\l}"]
+1664679089248 -> 1664679089056 [label="value" arrowtail=diamond dir=both]
+1664679089056[label="{:JsonString|+value:str='\"textx-lang-json\"'\l}"]
+1664679089248[label="{:__Member|}"]
+1664679089392 -> 1664679089152 [label="value:1" arrowtail=diamond dir=both]
+1664679089152 -> 1664679088912 [label="name" arrowtail=diamond dir=both]
+1664679088912[label="{:JsonString|+value:str='\"authors\"'\l}"]
+1664679089152 -> 1664679088864 [label="value" arrowtail=diamond dir=both]
+1664679088864 -> 1664679088720 [label="value:0" arrowtail=diamond dir=both]
+1664679088720[label="{:JsonString|+value:str='\"Jean-François Bage...'\l}"]
+1664679088864[label="{:JsonArray|}"]
+1664679089152[label="{:__Member|}"]
+1664679089392 -> 1664679088960 [label="value:2" arrowtail=diamond dir=both]
+1664679088960 -> 1664679088672 [label="name" arrowtail=diamond dir=both]
+1664679088672[label="{:JsonString|+value:str='\"year\"'\l}"]
+1664679088960 -> 1664679088624 [label="value" arrowtail=diamond dir=both]
+1664679088624[label="{:JsonNumber|+value:str='2024'\l}"]
+1664679088960[label="{:__Member|}"]
+1664679089392 -> 1664679088768 [label="value:3" arrowtail=diamond dir=both]
+1664679088768 -> 1664679088480 [label="name" arrowtail=diamond dir=both]
+1664679088480[label="{:JsonString|+value:str='\"tested\"'\l}"]
+1664679088768 -> 1664679088432 [label="value" arrowtail=diamond dir=both]
+1664679088432[label="{:JsonLiteral|+value:str='true'\l}"]
+1664679088768[label="{:__Member|}"]
+1664679089392[label="{:JsonObject|}"]
+1664679089488[label="{:JsonText|}"]
+
+}
