@@ -6,6 +6,8 @@
 
 The `textxjson` package provides a parser (basically a *textX* *metamodel*), able to build a *textx* *model* from a JSON file or string. This model can be visualized, for educational purpose, but more importantly can be *decoded* to obtain the usual (as done by [Lib/json](https://docs.python.org/3/library/json.html)) python representation of the JSON document.
 
+**textx-lang-json** has been created by Jean-François Baget at the [Boreal](https://team.inria.fr/boreal/) team ([Inria](https://www.inria.fr/fr) and [LIRMM](https://www.lirmm.fr/)). It is part of the [textx-lang-dlgpe]() project.
+
 ### Walkthrough
 
 The following code demonstrates, in python, how to build a `parser`, generate a `model` from a python string respecting the JSON standard, and `decode` the model to obtain the usual python representation of the python string (in that case a dictionary). It also shows that `parser.model_from_str(data).decode()` returns the same python object as the standard `json.loads(data)`.
@@ -28,13 +30,20 @@ jsonresult = json.loads(data) # using the standard python function to decode dat
 test2 = textxresult == jsonresult # test2 is True
 ```
 
+Note that a parser can also read a JSON file:
 
+```python
+model = parser.model_from_file("./path/to/data.json")
+
+```
 
 ## Installation
 
 TO DO when registered on pip.
 
 ### Testing
+
+You can test that everything behaves correctly...
 
 ```
 python -m unittest
@@ -47,6 +56,7 @@ Ran 14 tests in 11.538s
 OK
 ```
 
+Thanks to [ArenaNet](https://www.arena.net/) whose [GW2 API](https://wiki.guildwars2.com/wiki/API:Main) provided some data used in our testbed.
 
 ## Usage
 
@@ -62,6 +72,8 @@ parser = metamodel_for_language('textxjson')
 
 #### Visualizing the grammar
 
+This parser can be used to obtain a graphical representation of the grammar [json.tx](./src/textxjson/grammar/json.tx). For more details on textx visualization, see https://textx.github.io/textX/visualization.html.
+
 ```python
 from textx.export import metamodel_export
 
@@ -71,11 +83,74 @@ This codes generates a file `json.dot` that can be visualized with [Graphviz](ht
 
 ![parser](./img/json.png)
 
-### Parsing a Json string
+### Parsing JSON
+
+Most importantly, the parser can be used to generate a *model* from a python string encoding some JSON data, or directly from a JSON file.
+
+#### Parsing a python string
+
+The parsing below is demonstrated using a python string.
+
+```python
+some_json = r'''
+{
+    "name" : "textx-lang-json",
+    "authors" : [
+        "Jean-François Baget"
+    ],
+    "year" : 2024,
+    "tested" : true
+}
+'''
+
+model = parser.model_from_str(some_json)
+```
+
+#### Parsing a JSON file
+
+If we have the following JSON file **data.json**...
+
+```json
+{
+    "name" : "textx-lang-json",
+    "authors" : [
+        "Jean-François Baget"
+    ],
+    "year" : 2024,
+    "tested" : true
+}
+```
+... the parser can build the model directly from the file:
+
+```python
+model = parser.model_from_file("data.json")
+```
 
 #### Visualizing the model
 
+As for the parser, the model can be visualized.
+
+```python
+from textx.export import model_export
+
+model_export(model, 'model.dot')
+```
+This file `model.dot` can also be visualized with [Graphviz](https://graphviz.org/).
+
+
 ![model](./img/model.png)
+
+### Decoding the model
+
+The method `decode()` is called on a *model* to obtain the usual python representation of JSON strings. The test shows the interest of this representation.
+
+```python
+result = model.decode()
+
+test = result['authors'][0] == 'Jean-François Baget' # test is True
+```
+
+
 
 
 
