@@ -6,6 +6,30 @@
 
 The `textxjson` package provides a parser (basically a *textX* *metamodel*), able to build a *textx* *model* from a JSON file or string. This model can be visualized, for educational purpose, but more importantly can be *decoded* to obtain the usual (as done by [Lib/json](https://docs.python.org/3/library/json.html)) python representation of the JSON document.
 
+### Walkthrough
+
+The following code demonstrates, in python, how to build a `parser`, generate a `model` from a python string respecting the JSON standard, and `decode` the model to obtain the usual python representation of the python string (in that case a dictionary). It also shows that `parser.model_from_str(data).decode()` returns the same python object as the standard `json.loads(data)`.
+
+```python
+from textx import metamodel_for_language
+
+parser = metamodel_for_language('textxjson') # building the parser
+
+data = '{"Hello": "World"}' # data is a python string respecting the JSON format
+model = parser.model_from_str(data) # model is a JsonText object
+textxresult = model.decode() # textxresult is a python dictionary
+
+test1 = textxresult == {'Hello' : 'World'} # test1 is True
+
+import json
+
+jsonresult = json.loads(data) # using the standard python function to decode data
+
+test2 = textxresult == jsonresult # test2 is True
+```
+
+
+
 ## Installation
 
 TO DO when registered on pip.
