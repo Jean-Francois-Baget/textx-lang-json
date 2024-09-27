@@ -15,7 +15,7 @@ __PATH__ = os.path.dirname(__file__)
 
 
 def textxjson_language():
-    mm = metamodel_from_file(os.path.join(__PATH__, 'grammar/json.tx'), classes = __json_classes__, memoization = False)
+    mm = metamodel_from_file(os.path.join(__PATH__, 'grammar', 'json.tx'), classes = __json_classes__, memoization = False)
     return mm
 
 

@@ -27,7 +27,7 @@ package-dir = {"" = "src"}
 packages = ["textxjson"]
 
 [tool.setuptools.package-data]
-"*" = ["*.tx"]
+"*" = ["grammar/*.tx"]
 
 [tool.setuptools.dynamic]
 version = {attr = "textxjson.__VERSION__"}
