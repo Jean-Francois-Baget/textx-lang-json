@@ -1,6 +1,6 @@
 # textx-lang-json
 
-![logos](./img/logos.jpg)
+![logos](https://github.com/Jean-Francois-Baget/textx-lang-json/blob/main/img/logos.jpg)
 
 **textx-lang-json** is a python implementation of the JSON (JavaScript Object Notation) data interchange format [RFC8259](https://www.rfc-editor.org/rfc/rfc8259) using the [textX](https://textx.github.io/textX/) meta-language. Though it is not intended to replace the standard python JSON encoder and decoder [Lib/json](https://docs.python.org/3/library/json.html), which is much faster, it is a good alternative when you want to mix some JSON in your own textX grammar, or a good starting point should you want to develop your own JSON-like grammar.
 
@@ -81,7 +81,7 @@ metamodel_export(parser, 'json.dot')
 ```
 This codes generates a file `json.dot` that can be visualized with [Graphviz](https://graphviz.org/), as shown below.
 
-![parser](./img/json.png)
+![parser](https://github.com/Jean-Francois-Baget/textx-lang-json/blob/main/img/json.png)
 
 ### Parsing JSON
 
@@ -138,7 +138,7 @@ model_export(model, 'model.dot')
 This file `model.dot` can also be visualized with [Graphviz](https://graphviz.org/).
 
 
-![model](./img/model.png)
+![model](https://github.com/Jean-Francois-Baget/textx-lang-json/blob/main/img/model.png)
 
 ### Decoding the model
 

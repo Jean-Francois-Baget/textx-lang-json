@@ -11,10 +11,9 @@ description = "A textX implementation of JSON."
 readme = "README.md"
 requires-python = ">=3.7"
 keywords = ["one", "two"]
-license = {text = "Apache-2-License"}
+license = {text = "MIT AND (Apache-2.0 OR BSD-2-clause)"}
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache 2 License",
     "Operating System :: OS Independent"
 ]
 dependencies = [
