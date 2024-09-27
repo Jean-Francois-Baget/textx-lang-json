@@ -4,7 +4,7 @@ from textx import LanguageDesc
 import textxjson.json
 
 
-__VERSION__ = "0.0dev1"
+__VERSION__ = "0.0dev2"
 
 
 __json_classes__ = [c for c in textxjson.json.__dict__.values() 

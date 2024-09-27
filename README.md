@@ -39,13 +39,17 @@ model = parser.model_from_file("./path/to/data.json")
 
 ## Installation
 
-TO DO when registered on pip.
+```
+pip install textx-lang-json
+```
 
 ### Testing
 
-You can test that everything behaves correctly...
+You can test that everything behaves correctly (but first you have to clone the whole repository).
 
 ```
+git clone https://github.com/Jean-Francois-Baget/textx-lang-json.git
+cd textx-lang-json
 python -m unittest
 ```
 ```
